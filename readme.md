@@ -62,7 +62,7 @@ If you have purchased VMware software, enter the license key in the space provid
 ### Step 13:
 Now you have successfully installed VMware Pro, you can create or open virtual machine from VMWare, and final look will be this.
 
-![VMware Worstation Pro Screenshot][workstation-image]
+![VMware Workstation Pro Screenshot][workstation-image]
 
 ---
 
@@ -85,7 +85,7 @@ This section guide how to install Ubuntu on VMWare.
 ### Step 1: Create a new virtual machine.
 1. After Downloading ubuntu iso file. Double click VMWare app and click on **Create a new virtual machine**.
 2. Select **custom** type configuration and click on next.
-3. You can choose different hardware comapatiblity or default and then press next button.
+3. You can choose different hardware compatibility or default and then press next button.
 4. On guest Installation window select I will install operating system later and press next button.
 5. Now select **ubuntu** version from drop down menu and press next button. 
 6. Now you can choose virtual machine name and location for storing this virtual machine. For example:
@@ -112,7 +112,7 @@ This section guide how to install Ubuntu on VMWare.
 3. Your set up is complete now power this virtual machine to start the installation process.
 4. Upon booting from the ".iso" or "bootable media kit, you will be welcomed with a screen presenting multiple options. To initiate the installation process of Ubuntu 24.04, you must select the "Try or Install Ubuntu" option and hit the Enter key.
 5. Now choose language for ubuntu. For me it is english.
-6. Now accessiblity you can leave what is default and press next button.
+6. Now accessibility you can leave what is default and press next button.
 7. Choose keyboard layout for me it is **English(US)** and press next button.
 8. In connect to the internet section choose **wired connection** and press next button.
 9. Then choose **Install ubuntu** option and press next.
@@ -123,7 +123,7 @@ This section guide how to install Ubuntu on VMWare.
 14. Now for **Account window** you choose your computer name, username and password.
 15. Select **Time Zone**. If you are connected with internet it will automatically selected according to your location and go for the next button.
 16. Now you for the final step you press the **Install** button and wait until it finish it's process.
-17. After installation complete it will show a restart dialoge box press the **restart** button and you have successfully completed installation.
+17. After installation complete it will show a restart dialog box press the **restart** button and you have successfully completed installation.
 18. Now log in into computer with your username password, and final output will like this.
 
     ![Ubuntu Landing Page][ubuntu-image]
@@ -308,7 +308,7 @@ and press **Done**.
 ### Step 6:
 On the same window select installation destination. For VMWare no need to change.
 ### Step 7:
-Now press on Netowork and Hostname. Turn on ethernet connection and choose hostname.For me it is **orahost**.
+Now press on Network and Hostname. Turn on ethernet connection and choose hostname.For me it is **orahost**.
 And now press **Done**.
 ### Step 8:
 Now press on root password and choose root password. and press **Done**
@@ -317,7 +317,7 @@ Select user creation option and create a user for this os.
 ### Step 10:
 Now you are all set to begin installation and press **Begin Installation**. Wait until it is completed and reboot the system.
 ### Step 11:
-Now it will show liscense information press on it and accept on the agreement. Then finish the configuration.
+Now it will show license information press on it and accept on the agreement. Then finish the configuration.
 You are ready to use the os. Now move to the next section for install oracle database 19c.
 
 ---
@@ -550,7 +550,7 @@ Click Next.
 ### Step 8:
 The **Specify Configuration Options** page open and use default settings on the Memory tab and click next.
 ### Step 9:
-The **Specify Database Storage Options** page opens and Select **File system**, use the default database file location, and click Next. I used diffrent location "u02/oradata/"
+The **Specify Database Storage Options** page opens and Select **File system**, use the default database file location, and click Next. I used different location "u02/oradata/"
 ### Step 10:
 The **Specify Management Options** page opens and click Next, with the default settings unchanged.
 ### Step 11:
@@ -562,7 +562,7 @@ The **Privileged Operating System groups** page opens and click Next, with the d
 ### Step 14:
 The **Root script execution configuration page** opens and choose password for root, click Next.
 ### Step 15:
-The **Perform Prerequisite Checks** page opens and automatically checks all prerequisities and opens to **Summary** page. 
+The **Perform Prerequisite Checks** page opens and automatically checks all prerequisites and opens to **Summary** page. 
 ### Step 16:
 Click Install and the **Install Product** page opens and the installation program starts to install the database and displays the installation progress.
 In the **Execute Configuration Scripts** dialog box, click OK.
@@ -619,7 +619,7 @@ tnsping ocl
 tnsping oclpdb
 ```
 ### Step 8:
-Now run this command to make sure oracle isntalled and ready to use and the output should be like this:
+Now run this command to make sure oracle installed and ready to use and the output should be like this:
 ```
 sqlplus / as sysdba
 ```
@@ -633,12 +633,6 @@ Throughout this documentation a brief guideline is given for installing:
 - [x] PostgreSQL
 - [x] Oracle Linux 8
 - [x] Oracle database 19c
-
-
-
-
-
-
 
 
 
