@@ -4,10 +4,19 @@
     - [VMWare Installation](#vmware-installation)
 - [Ubuntu Installation Guide](#ubuntu-installation-guide)
     - [Requirements](#requirements)
-- [Step 1: Install VMware](#step-1-install-vmware)
-- [Step 2: Install Ubuntu](#step-2-install-ubuntu)
-  - [Configure VMware Settings](#configure-vmware-settings)
-- [Troubleshooting](#troubleshooting)
+    - [Install Ubuntu](#install-ubuntu)
+- [MySQL Installation](#mysql-installation)
+    - [Install](#install)
+    - [Configure MySQL](#configure-mysql)
+    - [Secure Installation MySQL](#secure-installation-mysql)
+- [Install PostgreSQL](#install-postgresql)
+- [Install Oracle 19c Database](#install-oracle-19c-database)
+    - [Requirements for oracle database](#requirements-for-oracle-database)
+    - [Install Oracle Linux](#install-oracle-linux)
+    - [Install Oracle Database 19c](#install-oracle-database-19c)
+    - [Oracle DB 19c Prerequisites](#oracle-db-19c-prerequisites)
+    - [Oracle 19c Software Installation](#oracle-19c-software-installation)
+    - [Configuring the Oracle database listener](#configuring-the-oracle-database-listener)
 - [Conclusion](#conclusion)
 
 # VMWare Installation Guide
@@ -122,9 +131,10 @@ This section guide how to install Ubuntu on VMWare.
 
 
 <!-- MySQL installation on ubuntu -->
-## MySQL Installation
+# MySQL Installation
 This section guide how to install MySQL on Ubuntu.
 
+## Install
 ### Step 1:
 To install it, update the package index on your server if you’ve not done so recently:
 ```
@@ -143,7 +153,7 @@ sudo systemctl start mysql.service
 ```
 These commands will install and start MySQL, but will not prompt you to set a password or make any other configuration changes. Because this leaves your installation of MySQL insecure, we will address this next.
 
-### Configure MySQL
+## Configure MySQL
 ### Step 1: Adjust mysql root
 By default root do not have any password. To set password for root use:
 ```
@@ -267,7 +277,7 @@ Exit shell use
 This section guide how to install Oracle 19c database on VMWare.
 
 ---
-## Requirements
+## Requirements For Oracle Database
 - [x] VMware installed
 - [ ] OS(Oracle Linux). [Download][oracle-linux]
 - [ ] Oracle Database 19c for Linux x86-64. [Download ZIP File][oracle-database].
