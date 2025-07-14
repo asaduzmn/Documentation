@@ -369,9 +369,6 @@ Create the new groups and users.
 
 
 ### Additional Setup
-
-
-
 Set the password for the "oracle" user.
 
 ```
@@ -397,7 +394,7 @@ If you have the Linux firewall enabled, you will need to disable or configure it
 # systemctl disable firewalld
 ```
 
-ICreate the directories in which the Oracle software will be installed.
+I created these directories in which the Oracle software will be installed.
 
 ```
 mkdir -p /u01/app/oracle/product/19.3/dbhome_1
@@ -448,7 +445,40 @@ Add a reference to the "setEnv.sh" file at the end of the "/home/oracle/.bash_pr
 echo ". /home/oracle/scripts/setEnv.sh" >> /home/oracle/.bash_profile
 ```
 
+Create a "start_all.sh" and "stop_all.sh" script that can be called from a startup/shutdown service. Make sure the ownership and permissions are correct.
+```
+cat > /home/oracle/scripts/start_all.sh <<EOF
+#!/bin/bash
+. /home/oracle/scripts/setEnv.sh
 
+export ORAENV_ASK=NO
+. oraenv
+export ORAENV_ASK=YES
+
+dbstart \$ORACLE_HOME
+EOF
+
+
+cat > /home/oracle/scripts/stop_all.sh <<EOF
+#!/bin/bash
+. /home/oracle/scripts/setEnv.sh
+
+export ORAENV_ASK=NO
+. oraenv
+export ORAENV_ASK=YES
+
+dbshut \$ORACLE_HOME
+EOF
+
+chown -R oracle:oinstall /home/oracle/scripts
+chmod u+x /home/oracle/scripts/*.sh
+```
+
+Once the installation is complete and you've edited the "/etc/oratab", you should be able to start/stop the database with the following scripts run from the "oracle" user.
+```
+~/scripts/start_all.sh
+~/scripts/stop_all.sh
+```
 
 ## Oracle 19c Software Installation 
 
@@ -572,6 +602,21 @@ Now run this command to make sure oracle installed and ready to use and the outp
 sqlplus / as sysdba
 ```
 ![Oracle SQL][oracle-sql-image]
+
+## Post Installation
+Edit the "/etc/oratab" file setting the restart flag for each instance to 'Y'.
+```
+cdb1:/u01/app/oracle/product/19.0.0/dbhome_1:Y
+```
+
+Enable Oracle Managed Files (OMF) and make sure the PDB starts when the instance starts.
+```
+sqlplus / as sysdba <<EOF
+alter system set db_create_file_dest='${DATA_DIR}';
+alter pluggable database ${PDB_NAME} save state;
+exit;
+EOF
+```
 
 # Conclusion
 Throughout this documentation a brief guideline is given for installing:
